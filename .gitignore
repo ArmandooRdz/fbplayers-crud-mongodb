@@ -1,0 +1,10 @@
+.env
+.env.test
+node_modules/
+.vscode/*
+tmp/
+temp/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
