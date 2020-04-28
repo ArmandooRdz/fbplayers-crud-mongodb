@@ -5,12 +5,13 @@
 const express = require('express');
 const path = require('path');
 const exhbs = require('express-handlebars');
+const morgan = require('morgan');
 
 // initalizations
 app = express();
 
 // config
-app.set('port', process.env.PORT || 4000); // setting server port
+app.set('port', process.env.PORT || 3000); // setting server port
 app.set('views', path.join(__dirname, 'views')); // setting views folder
 app.engine('.hbs', exhbs({ // setting handlebars engine
     defaultLayout: 'main', // default html code (like; head, footer, ...)
@@ -23,7 +24,7 @@ app.set('view engine', '.hbs');
 
 // middlewars
 app.use(express.urlencoded({extended: false}));
-
+app.use(morgan('dev'));
 
 // global variables
 

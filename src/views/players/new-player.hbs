@@ -1,0 +1,59 @@
+<div class="col-md-4 mx-auto">
+    <div class="card text-center">
+        <form action="/players/add" method="POST"></form>
+        <div class="card-header">
+            <h3 class="title">New player</h3>
+        </div>
+        <div class="card-body">
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control text-center" name="name" autofocus required>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last name</label>
+                <input type="text" class="form-control text-center" name="lastname" required>
+            </div>
+            <div class="form-group">
+                <label for="position">Position</label>
+                <input type="text" class="form-control" name="position" required>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="number">Number</label>
+                        <input type="number" class="form-control text-center" name="number" min="1" max="999" required>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="rating">Overall rating</label>
+                        <input type="number" class="form-control text-center" name="rating" min="40" max="99" value="60"
+                            required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name">Photo</label>
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" name="image" onchange="readURL(this);">
+                        <label class="custom-file-label" for="image">Choose photo</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-2">
+                <img src="../img/default-photo.png" id="photoplayer" class="photo" alt="Fotball player"
+                    style="border-radius: 50%;margin: auto;width: 130px;height: 130px;">
+            </div>
+
+
+        </div>
+        <div class="card-footer">
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary">
+            </div>
+        </div>
+        </form>
+    </div>
+</div>

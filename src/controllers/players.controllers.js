@@ -5,7 +5,7 @@
 const playersController = {};
 
 playersController.renderPlayerForm = (req, res) => { 
-    res.send('Render new player form');
+    res.render('players/new-player');
 }
 
 playersController.newPlayer = (req, res) => { 

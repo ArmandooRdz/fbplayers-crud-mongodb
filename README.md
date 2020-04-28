@@ -1,12 +1,16 @@
 # App MongoDB y NodeJS 
 
+![arman 1](ss-1.png)
+
+
+
 ## Dependencies
-**Production**
+**Prod**
 - express
+    - express-handlebars
+    - express-session
 - connect-flash
 - bcryptjs
-- express-handlebars
-- express-session
 - mehtod-override
 - mongoose
 - passport 
@@ -16,17 +20,6 @@
 - dotenv
 - nodemon
 
-## folder tree
-    - src
-        - config
-        - controllers
-        - helpers
-        - models
-        - public
-            - css
-            - js
-            - img
-            - fonts 
-            - ...
-        - routes
-        - views
+## commands
+`npm start`
+`npm run dev`

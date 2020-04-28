@@ -2,8 +2,10 @@
 const { Router } = require('express');
 const router = Router();
 
-const {renderPlayerForm, newPlayer, renderPlayers, 
-    renderEditForm, updatePlayer, deletePlayer} = require('../controllers/players.controllers');
+const {
+    renderPlayerForm, newPlayer, renderPlayers, 
+    renderEditForm, updatePlayer, deletePlayer
+} = require('../controllers/players.controllers');
 
 // new player
 router.get('/players/add', renderPlayerForm); // return form
