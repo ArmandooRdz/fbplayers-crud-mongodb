@@ -1,7 +1,7 @@
 
 const {Schema, model} = require('mongoose');
 
-const PlayersSchema = new Schema({
+const PlayerSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -30,4 +30,4 @@ const PlayersSchema = new Schema({
     timestamps: true // to add "created at" and "updated at" values
 })
 
-model.exports = model('Player', PlayersSchema);
+module.exports = model('Player', PlayerSchema);

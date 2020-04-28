@@ -1,0 +1,51 @@
+
+<div class="row">
+
+    <!-- handlebars sintax -->
+    <!-- for each players received -->
+    {{#each players}}
+
+        <div class="col-md-3">
+            <div class="card">
+                <card class="card-header">
+
+                    <!-- cambiar cuando implemente subida de imagenes -->
+                    {{#if image}} <!-- if an image exists -->
+                        <div class="text-center">
+                            <img src="../img/default-photo.png" alt="" class="photo-player">
+                        </div>
+                    {{else}} <!-- if an image not exists -->
+                        <div class="text-center">
+                            <img src="{{image}}" alt="" class="photo-player">
+                        </div>
+                    {{/if}}    <!-- end if -->
+
+                    <hr>
+                    <h4 class="font-weight-bold text-center">{{name}} {{lastname}}</h4>
+                </card>
+                <div class="card-body">
+                    <div class="text-center m-auto">
+                        <p><i class="fa fa-check-circle pr-2"></i><strong>{{rating}}</strong></p>
+                        <p><i class="fa fa-arrows pr-2"></i>{{position}}</p>
+                        <p><strong class="p-2">#</strong>{{number}}</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex text-center">
+                        <!-- edit action -->
+                        <a class="m-auto" href="/players/edit/{{_id}}"><i class="fa fa-edit"></i></a>
+                        <!-- delete action -->
+                        <!-- using method override to send delete request from form html -->
+                        <input type="text" hidden name="_method" value="DELETE">
+                        <form action="/players/delete/{{_id}}?_method=DELETE" method="POST" class="m-auto">
+                            <button class="btn btn-delete-card" type="submit"><i class="fa fa-trash"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {{/each}}
+    <!-- end loop -->
+
+</div>
