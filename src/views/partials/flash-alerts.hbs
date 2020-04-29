@@ -1,0 +1,22 @@
+
+<!-- html code to success alerts/messages -->
+
+{{#if success_msg}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <!-- print variable content -->
+    <strong>{{success_msg}}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+
+{{#if error_msg}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <!-- print variable content -->
+    <strong>{{error_msg}}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}

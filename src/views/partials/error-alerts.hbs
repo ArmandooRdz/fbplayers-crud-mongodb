@@ -1,0 +1,11 @@
+
+<!-- html code to error alerts/messages -->
+{{#each errors}} <!-- loop for each err -->
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <!-- print variable content -->
+        <strong>{{text}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{/each}}

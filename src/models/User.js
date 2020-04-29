@@ -10,7 +10,8 @@ const UserSchema = new Schema({
     },
     email: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     password: {
         type: String,
@@ -25,7 +26,7 @@ UserSchema.methods.encryptPass = async password => { // creating "encryptPass" m
     return await bcrypt.hash(password, salt); // returning encrypted password 
 }
 
-UserSchema.method.checkPass = function(password) { // to validate/compare users passwords (to login)
+UserSchema.method.checkPass = async function(password) { // to validate/compare users passwords (to login)
     return await bcrypt.compare(password, this.password); // return true or false 
 }
 

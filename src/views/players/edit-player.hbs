@@ -1,37 +1,38 @@
 
 <div class="col-md-4 mx-auto">
     <div class="card text-center">
-        <form action="/players/add" method="POST">
+        <form action="/players/edit/{{player.id}}?_method=PUT" method="POST">
+            <input type="text" hidden name="_method" value="PUT">
             <div class="card-header">
-                <h3 class="title">New player</h3>
+                <h3 class="title">Edit player</h3>
             </div>
             <div class="card-body">
 
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control text-center" name="name" autofocus required>
+                    <input type="text" class="form-control text-center" name="name" value="{{player.name}}" required>
                 </div>
                 <div class="form-group">
                     <label for="lastname">Last name</label>
-                    <input type="text" class="form-control text-center" name="lastname" required>
+                    <input type="text" class="form-control text-center" name="lastname" value="{{player.lastname}}" required>
                 </div>
                 <div class="form-group">
                     <label for="position">Position</label>
-                    <input type="text" class="form-control text-center" name="position" required>
+                    <input type="text" class="form-control text-center" name="position" value="{{player.position}}" required>
                 </div>
                 <div class="row">
                     <div class="col-6">
                         <div class="form-group">
                             <label for="number">Jersey</label>
-                            <input type="number" class="form-control text-center" name="number" min="1" max="999"
+                            <input type="number" class="form-control text-center" name="number" min="1" max="999" value="{{player.number}}"
                                 required>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-group">
                             <label for="rating">Overall rating</label>
-                            <input type="number" class="form-control text-center" name="rating" min="40" max="99"
-                                value="60" required>
+                            <input type="number" class="form-control text-center" name="rating" min="40" max="99" value="{{player.rating}}"
+                                value="" required>
                         </div>
                     </div>
                 </div>
@@ -39,21 +40,19 @@
                     <label for="name">Photo</label>
                     <div class="input-group">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" name="image" onchange="readURL(this);">
-                            <label class="custom-file-label" for="image">Choose photo</label>
+                            <input type="file" class="custom-file-input" name="image" value="../../img/default-photo.png" onchange="readURL(this);">
+                            <label class="custom-file-label" for="image">Update photo</label>
                         </div>
                     </div>
                 </div>
                 <div class="mt-2">
-                    <img src="../img/default-photo.png" id="photoplayer" class="photo" alt="Fotball player"
+                    <img src="../../img/default-photo.png" id="photoplayer" class="photo" alt="Fotball player"
                         style="border-radius: 50%;margin: auto;width: 130px;height: 130px;">
                 </div>
-
-
             </div>
             <div class="card-footer">
                 <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-primary">
+                    <input type="submit" value="Edit" class="btn btn-primary">
                 </div>
             </div>
         </form>

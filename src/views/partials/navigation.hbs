@@ -11,20 +11,30 @@
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="me">Me</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="about">About</a>
                 </li>
             </ul>
         </div>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a href="#" class="nav-link">Sign in</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Sign up</a>
-            </li>
-        </ul>
+        <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Players
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/players">All</a>
+                <a class="dropdown-item" href="/players/add">New</a>
+            </div>
+        </div>
+        <ul class="navbar-nav ml-auto dropdown">
+            <a class="dropdown-toggle nav-link" href="#" role="button" data-toggle="dropdown">Profile</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="/me">My user</a>
+                <div class="dropdown-divider"></div>
+                <a href="/signin" class="dropdown-item">Sign in</a>
+                <a href="/signup" class="dropdown-item">Sign up</a>
+                <a href="/logout" class="dropdown-item">Logout</a>
+            </div>
+    </div>
+    </ul>
     </div>
 </nav>
