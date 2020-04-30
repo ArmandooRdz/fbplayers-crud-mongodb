@@ -21,12 +21,14 @@ const UserSchema = new Schema({
     timestamps: true
 });
 
+/* user functions */
+
 UserSchema.methods.encryptPass = async password => { // creating "encryptPass" method to encrypt users passwords
     const salt = await bcrypt.genSalt(10); // generating hash salt 10 times | async await
     return await bcrypt.hash(password, salt); // returning encrypted password 
 }
 
-UserSchema.method.checkPass = async function(password) { // to validate/compare users passwords (to login)
+UserSchema.methods.checkPass = async function(password) { // to validate/compare users passwords (to login)
     return await bcrypt.compare(password, this.password); // return true or false 
 }
 
