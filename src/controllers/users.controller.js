@@ -2,7 +2,7 @@
 const UserController = {};
 
 const User = require('../models/User'); // User data model 
-
+const passport = require('passport');
 
 UserController.renderSignupForm = (req, res) => {
     res.render('users/signup');
@@ -46,16 +46,21 @@ UserController.signup = async (req, res) => {
     }
 }
 
-UserController.renderSigninForm = (req, res) => {
+UserController.renderSigninForm = (req, res) => { // login form
     res.render('users/signin');
 }
 
-UserController.signin = (req, res) => { 
-    res.send('signin');
-}
+UserController.signin = passport.authenticate('local', { // login
+    failureRedirect: '/signin', // in error case
+    successRedirect: '/players', // in success caso
+    failureFlash: true // in error case use flash alert/messages
+});
+
 
 UserController.logout = (req, res) => {
-    res.send('Logout');
+    req.logout(); // passport delete the current session
+    req.flash('success_msg', 'Logged out succesfull');
+    res.redirect('/signin');
 }
 
 module.exports = UserController;
